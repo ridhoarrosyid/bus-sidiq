@@ -32,7 +32,7 @@ export default function App() {
   }, []);
 
   // Placeholder untuk nomor WhatsApp (Ganti dengan nomor asli nantinya)
-  const waNumber = '6281234567890';
+  const waNumber = '6282279200651';
   const waMessage =
     'Halo PO. Putri Candi, saya ingin bertanya mengenai ketersediaan dan harga sewa armada bus.';
   const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(
@@ -90,14 +90,14 @@ export default function App() {
             >
               Armada
             </a>
-            {/* <a
-              href='#galeri'
+            <a
+              href='#profile'
               className={`font-medium hover:text-orange-500 transition-colors ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}
             >
-              Galeri
-            </a> */}
+              Profile
+            </a>
             <a
               href={waLink}
               target='_blank'
@@ -137,13 +137,13 @@ export default function App() {
             >
               Armada
             </a>
-            {/* <a
-              href='#galeri'
+            <a
+              href='#profile'
               onClick={() => setMobileMenuOpen(false)}
               className='text-gray-800 font-medium py-2 border-b'
             >
-              Galeri
-            </a> */}
+              Profile
+            </a>
             <a
               href={waLink}
               target='_blank'
@@ -165,25 +165,25 @@ export default function App() {
             alt='Armada Bus Putri Candi'
             className='w-full h-full object-cover object-center'
           />
-          <div className='absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-black/60'></div>
+          <div className='absolute inset-0 bg-linear-to-r from-black/80 via-black/70 to-black/60'></div>
         </div>
 
         <div className='container mx-auto px-4 md:px-8 relative z-10'>
-          <div className='max-w-2xl text-white'>
-            <div className='inline-block bg-orange-600/20 text-orange-400 border border-orange-500/30 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm'>
+          <div className='max-w-2xl text-white mx-auto'>
+            <div className='mx-auto block w-fit bg-orange-600/20 text-orange-400 border border-orange-500/30 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm'>
               🌟 Jasa Transportasi Terbaik di Lampung
             </div>
-            <h1 className='text-4xl md:text-6xl font-extrabold leading-tight mb-6'>
+            <h1 className='text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-center'>
               Perjalanan Aman & Nyaman Bersama{' '}
               <span className='text-orange-500'>Putri Candi</span>
             </h1>
-            <p className='text-lg md:text-xl text-gray-200 mb-8 leading-relaxed'>
+            <p className='text-lg md:text-xl text-gray-200 mb-8 leading-relaxed text-center'>
               Kami melayani perjalanan AKAP, AKDP, Antar Jemput Karyawan, dan
               Pariwisata dengan armada Jetbus 3+ & Jetbus 5 terbaru yang bersih,
               aman, dan berkelas.
             </p>
 
-            <div className='flex flex-col sm:flex-row gap-4'>
+            <div className='flex flex-col sm:justify-center sm:flex-row gap-4 mx-auto'>
               <a
                 href={waLink}
                 target='_blank'
@@ -200,7 +200,7 @@ export default function App() {
               </a>
             </div>
 
-            <div className='mt-10 flex items-center gap-6 text-sm text-gray-300'>
+            <div className='mt-10 flex mx-auto justify-center items-center gap-6 text-sm text-gray-300'>
               <div className='flex items-center gap-2'>
                 <CheckCircle2 className='text-orange-500' size={18} /> Bigbus
                 50/60 Seat
@@ -297,9 +297,6 @@ export default function App() {
                   alt='Big Bus Putri Candi'
                   className='w-full h-full object-cover object-[50%_65%] group-hover:scale-105 transition-transform duration-500'
                 />
-                <div className='absolute top-4 right-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider'>
-                  Tersedia Jetbus 5
-                </div>
               </div>
               <div className='p-8'>
                 <div className='flex items-center gap-2 text-orange-400 font-semibold mb-2'>
@@ -378,7 +375,7 @@ export default function App() {
       </section>
 
       {/* Video Profile Section */}
-      <section id='galeri' className='py-20 bg-white'>
+      <section id='profile' className='py-20 bg-white'>
         <div className='container mx-auto px-4 md:px-8'>
           <div className='text-center max-w-3xl mx-auto mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
@@ -521,8 +518,7 @@ export default function App() {
                 <div>
                   <iframe
                     src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.365205805851!2d105.2267718!3d-5.3611256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40c5513e303801%3A0x9691daa356d0a7ca!2sPool%20bus%20PO.%20Putri%20Candi!5e0!3m2!1sid!2sid!4v1773156313323!5m2!1sid!2sid'
-                    style={{ border: 0 }}
-                    className='w-full min-h-[150px]'
+                    className='w-full min-h-37.5 border-0'
                     allowFullScreen=''
                     loading='lazy'
                     referrerPolicy='no-referrer-when-downgrade'
