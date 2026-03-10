@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   BusFront,
   MapPin,
@@ -10,7 +10,13 @@ import {
   Menu,
   X,
   CheckCircle2,
+  Facebook,
 } from 'lucide-react';
+
+import logo from './assets/logo.jpeg';
+import hero from './assets/hero.jpeg';
+import bigBis from './assets/big-bis.jpeg';
+import mediumBis from './assets/medium-bis.jpeg';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +36,7 @@ export default function App() {
   const waMessage =
     'Halo PO. Putri Candi, saya ingin bertanya mengenai ketersediaan dan harga sewa armada bus.';
   const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(
-    waMessage
+    waMessage,
   )}`;
 
   return (
@@ -46,7 +52,7 @@ export default function App() {
         <div className='container mx-auto px-4 md:px-8 flex justify-between items-center'>
           <div className='flex items-center gap-2'>
             <div className='w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold text-xl'>
-              PC
+              <img src={logo} alt='Logo Putri Candi' className='rounded-full' />
             </div>
             <div>
               <h1
@@ -84,14 +90,14 @@ export default function App() {
             >
               Armada
             </a>
-            <a
+            {/* <a
               href='#galeri'
               className={`font-medium hover:text-orange-500 transition-colors ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}
             >
               Galeri
-            </a>
+            </a> */}
             <a
               href={waLink}
               target='_blank'
@@ -131,13 +137,13 @@ export default function App() {
             >
               Armada
             </a>
-            <a
+            {/* <a
               href='#galeri'
               onClick={() => setMobileMenuOpen(false)}
               className='text-gray-800 font-medium py-2 border-b'
             >
               Galeri
-            </a>
+            </a> */}
             <a
               href={waLink}
               target='_blank'
@@ -155,11 +161,11 @@ export default function App() {
         {/* Background Image (Placeholder menggunakan gambar bus nuansa orange) */}
         <div className='absolute inset-0 z-0'>
           <img
-            src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop'
+            src={hero}
             alt='Armada Bus Putri Candi'
             className='w-full h-full object-cover object-center'
           />
-          <div className='absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/30'></div>
+          <div className='absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-black/60'></div>
         </div>
 
         <div className='container mx-auto px-4 md:px-8 relative z-10'>
@@ -287,9 +293,9 @@ export default function App() {
             <div className='group relative overflow-hidden rounded-2xl bg-gray-800'>
               <div className='h-64 sm:h-80 overflow-hidden relative'>
                 <img
-                  src='https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=2071&auto=format&fit=crop'
+                  src={bigBis}
                   alt='Big Bus Putri Candi'
-                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
+                  className='w-full h-full object-cover object-[50%_65%] group-hover:scale-105 transition-transform duration-500'
                 />
                 <div className='absolute top-4 right-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider'>
                   Tersedia Jetbus 5
@@ -330,7 +336,7 @@ export default function App() {
             <div className='group relative overflow-hidden rounded-2xl bg-gray-800'>
               <div className='h-64 sm:h-80 overflow-hidden relative'>
                 <img
-                  src='https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?q=80&w=2070&auto=format&fit=crop'
+                  src={mediumBis}
                   alt='Medium Bus Putri Candi'
                   className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
                 />
@@ -366,6 +372,36 @@ export default function App() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Profile Section */}
+      <section id='galeri' className='py-20 bg-white'>
+        <div className='container mx-auto px-4 md:px-8'>
+          <div className='text-center max-w-3xl mx-auto mb-12'>
+            <h2 className='text-3xl md:text-4xl font-bold mb-4'>
+              Galeri Perjalanan Kami
+            </h2>
+            <p className='text-gray-600'>
+              Melihat lebih dekat kenyamanan dan fasilitas armada PO. Putri
+              Candi selama perjalanan.
+            </p>
+          </div>
+
+          {/* Container Video Responsif */}
+          <div className='max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-100'>
+            <div className='relative w-full aspect-video'>
+              <iframe
+                className='absolute top-0 left-0 w-full h-full'
+                src='https://www.youtube.com/embed/doOuRhBJtcU?si=UlA68b8iA9ZSpDkO'
+                title='YouTube video player'
+                frameBorder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                referrerPolicy='strict-origin-when-cross-origin'
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>
@@ -407,7 +443,11 @@ export default function App() {
           <div>
             <div className='flex items-center gap-2 mb-6'>
               <div className='w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold text-sm'>
-                PC
+                <img
+                  src={logo}
+                  alt='Logo Putri Candi'
+                  className='rounded-full'
+                />
               </div>
               <div>
                 <h3 className='text-white font-bold text-lg'>
@@ -429,6 +469,14 @@ export default function App() {
                 className='w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-orange-600 hover:text-white transition-colors'
               >
                 <Instagram size={20} />
+              </a>
+              <a
+                href='https://facebook.com/groups/2919594004985811/?mibextid=rS40aB7S9Ucbxw6v'
+                target='_blank'
+                rel='noreferrer'
+                className='w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-orange-600 hover:text-white transition-colors'
+              >
+                <Facebook size={20} />
               </a>
             </div>
           </div>
@@ -470,10 +518,16 @@ export default function App() {
             <ul className='flex flex-col gap-4 text-sm'>
               <li className='flex items-start gap-3'>
                 <MapPin className='text-orange-500 shrink-0 mt-0.5' size={18} />
-                <span>
-                  Lampung, Indonesia (Silakan hubungi kami untuk lokasi garasi
-                  lengkap).
-                </span>
+                <div>
+                  <iframe
+                    src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.365205805851!2d105.2267718!3d-5.3611256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40c5513e303801%3A0x9691daa356d0a7ca!2sPool%20bus%20PO.%20Putri%20Candi!5e0!3m2!1sid!2sid!4v1773156313323!5m2!1sid!2sid'
+                    style={{ border: 0 }}
+                    className='w-full min-h-[150px]'
+                    allowFullScreen=''
+                    loading='lazy'
+                    referrerPolicy='no-referrer-when-downgrade'
+                  ></iframe>
+                </div>
               </li>
               <li className='flex items-start gap-3'>
                 <Phone className='text-orange-500 shrink-0 mt-0.5' size={18} />
