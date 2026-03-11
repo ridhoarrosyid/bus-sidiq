@@ -22,13 +22,7 @@ export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleConversion = (e) => {
-    e.preventDefault();
-
-    // 1. Logika untuk mengirim pesan/form Anda di sini (misal ke API atau WhatsApp)
-    // ...
-
-    // 2. Picu konversi Google Ads jika pengiriman sukses
+  const handleConversion = () => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'conversion', {
         send_to: 'AW-17975382392/lCNGCI6CpYYcEPiiqvtC',
