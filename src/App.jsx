@@ -22,6 +22,20 @@ export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleConversion = (e) => {
+    e.preventDefault();
+
+    // 1. Logika untuk mengirim pesan/form Anda di sini (misal ke API atau WhatsApp)
+    // ...
+
+    // 2. Picu konversi Google Ads jika pengiriman sukses
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-17975382392/lCNGCI6CpYYcEPiiqvtC',
+      });
+    }
+  };
+
   // Efek untuk mengubah warna navbar saat di-scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -103,6 +117,7 @@ export default function App() {
               target='_blank'
               rel='noreferrer'
               className='bg-orange-600 hover:bg-orange-700 text-white px-6 py-2.5 rounded-full font-semibold transition-all flex items-center gap-2 shadow-lg shadow-orange-500/30'
+              onClick={handleConversion}
             >
               <Phone size={18} />
               Pesan Sekarang
@@ -149,6 +164,7 @@ export default function App() {
               target='_blank'
               rel='noreferrer'
               className='bg-orange-600 text-white text-center px-4 py-3 rounded-lg font-bold flex justify-center items-center gap-2'
+              onClick={handleConversion}
             >
               <Phone size={18} /> Hubungi via WhatsApp
             </a>
@@ -189,6 +205,7 @@ export default function App() {
                 target='_blank'
                 rel='noreferrer'
                 className='bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-bold text-lg flex justify-center items-center gap-2 transition-all hover:scale-105'
+                onClick={handleConversion}
               >
                 Cek Ketersediaan Armada <ChevronRight size={20} />
               </a>
@@ -283,6 +300,7 @@ export default function App() {
               target='_blank'
               rel='noreferrer'
               className='bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-colors'
+              onClick={handleConversion}
             >
               Booking Sekarang
             </a>
@@ -428,6 +446,7 @@ export default function App() {
             target='_blank'
             rel='noreferrer'
             className='inline-flex items-center gap-3 bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-xl shadow-orange-900/20'
+            onClick={handleConversion}
           >
             <Phone size={24} /> Hubungi Admin Sekarang
           </a>
